@@ -1,7 +1,14 @@
-mes-config-ms:
-  commandes-last: 10
 spring:
   datasource:
-    url: jdbc:h2:mem:commandes
-    username: sa
-    password: password
+    url: jdbc:mysql://localhost:3306/commandes_db?user=root  # URL pour accéder à la base commandes_db avec l'utilisateur root
+    username: root  # Nom d'utilisateur MySQL
+    password: admin123  # Mot de passe MySQL
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update  # options : validate | update | create | create-drop
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
